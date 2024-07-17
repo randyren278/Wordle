@@ -1,69 +1,89 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #121213;
+    color: #d7dadc;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
     margin: 0;
 }
 
-.container {
-    text-align: center;
+header {
+    margin-top: 20px;
 }
 
 h1 {
-    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
 }
 
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(5, 50px);
-    grid-gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tile {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: white;
-}
-
-.keyboard {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.row {
+#game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.letter-box {
+    border: 2px solid #3a3a3c;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 3.5rem;
+    width: 3.5rem;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
-}
-
-.key {
-    width: 40px;
-    height: 40px;
-    margin: 2px;
-    border: none;
-    background-color: #ccc;
-    font-size: 18px;
+    align-items: center;
     text-transform: uppercase;
+    color: #ffffff;
+}
+
+.filled-box {
+    border: 2px solid #565758;
+}
+
+.letter-row {
+    display: flex;
+}
+
+#keyboard-cont {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keyboard-row {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.keyboard-button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 0 4px;
     cursor: pointer;
+    text-transform: uppercase;
+    background-color: #818384;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
 }
 
-.key:hover {
-    background-color: #bbb;
+.keyboard-button:hover {
+    background-color: #9aa0a6;
 }
 
-#enter, #backspace {
-    width: 80px;
+.keyboard-button:active {
+    background-color: #b9b9b9;
 }
