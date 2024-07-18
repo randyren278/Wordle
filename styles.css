@@ -14,9 +14,11 @@ header {
     position: absolute;
     top: 20px;
     left: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: space-between;
 }
 
 #logo-button {
@@ -114,14 +116,12 @@ main {
 
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--key-background);
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;

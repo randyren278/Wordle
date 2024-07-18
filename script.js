@@ -206,7 +206,16 @@ function setTheme(theme) {
     }
 }
 
-document.getElementById("light-theme-btn").addEventListener("click", () => setTheme('light'));
-document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
+document.addEventListener('DOMContentLoaded', () => {
+    const themesButton = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    // Set the width of the dropdown content to match the themes button
+    dropdownContent.style.width = `${themesButton.offsetWidth}px`;
+
+    // Event listeners for theme change
+    document.getElementById("light-theme-btn").addEventListener("click", () => setTheme('light'));
+    document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
+});
 
 initBoard();
