@@ -8,7 +8,6 @@ Eldrow+ is a word guessing game where players try to guess a hidden word within 
 - [Gallery](#gallery)
 - [Game Logic](#game-logic)
 - [Solving Functionality](#solving-functionality)
-- [Theme Persistence](#theme-persistence)
 - [Usage](#usage)
 
 ## Project Structure
@@ -37,7 +36,7 @@ Contains the main game logic and handles user interactions.
 Contains an array of possible words that can be selected as the hidden word to guess.
 
 ## Gallery
-![alt text](ezgif-1-2089763908.gif)
+![alt text](gallerygif.gif)
 
 ## Game Logic
 
@@ -158,26 +157,6 @@ The solver algorithm is designed to efficiently guess the hidden word by leverag
 1. **Initial Guess**: The first guess is always "soare".
 2. **Feedback and Filtering**: Feedback is received and potential words are filtered based on the feedback.
 3. **Sequential Guessing**: The process continues row by row, making guesses, receiving feedback, and filtering potential words until the correct word is guessed or guesses run out.
-
-## Theme Persistence
-
-To persist the selected theme across page reloads:
-
-### Functions
-
-#### setTheme(theme)
-
-Applies the selected theme and saves it to localStorage.
-
-#### applySavedTheme()
-
-Loads the saved theme from localStorage when the page loads and applies it.
-
-### Event Listeners
-
-- **DOMContentLoaded**: Applies the saved theme on page load.
-- **Theme Buttons**: Saves the selected theme to localStorage.
-- **Logo Button**: Reloads the page.
 
 ## Usage
 
