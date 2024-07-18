@@ -347,3 +347,19 @@ function solveGame() {
 document.getElementById("solve-button").addEventListener("click", solveGame);
 
 initBoard();
+
+function revealEasterEgg() {
+    const word = "randy";
+    rightGuessString = "randy";
+    for (let i = 0; i < word.length; i++) {
+        setTimeout(() => {
+            insertLetter(word[i]);
+        }, i * 300); // Adding delay to simulate typing
+    }
+
+    setTimeout(() => {
+        checkGuess();
+    }, word.length * 300 + 100); // Adding a delay before checking the guess
+}
+
+document.getElementById("easter-egg").addEventListener("click", revealEasterEgg);

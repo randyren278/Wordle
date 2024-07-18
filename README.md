@@ -37,8 +37,6 @@ Contains the main game logic and handles user interactions.
 Contains an array of possible words that can be selected as the hidden word to guess.
 
 ## Gallery
-![alt text](<Screenshot 2024-07-18 at 12.37.10 AM.png>)
-![alt text](<Screenshot 2024-07-18 at 12.37.25 AM.png>)
 ![alt text](ezgif-1-2089763908.gif)
 
 ## Game Logic

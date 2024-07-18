@@ -192,19 +192,19 @@ body.pulse-theme {
     --text-color: #55398e;
     --border-color: #3d3d66;
     --filled-border-color: #7a52cc;
-    --key-background: #3d3d66;
-    --key-text-color: #7a52cc;
+    --key-background: #3d3d66d4;
+    --key-text-color: #784fca;
     --key-background-hover: #5c5c8a;
     --key-background-active: #7a52cc;
 }
 
 body.beach-theme {
     --background-color: #eae4cf;
-    --text-color: #535457;
+    --text-color: #36373a;
     --border-color: #ada998;
     --filled-border-color: #9abbcd;
     --key-background: #ada998;
-    --key-text-color: #646669;
+    --key-text-color: #36373a;
     --key-background-hover: #9abbcd;
     --key-background-active: #646669;
 }
@@ -224,4 +224,15 @@ body.beach-theme {
 
 #solve-button:hover {
     background-color: #ffc107;
+}
+
+.easter-egg {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 14px;
 }
