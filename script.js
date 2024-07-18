@@ -228,8 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme("beach"));
 });
 
+function solveGame() {
+   //missing function//
+}
 
 document.getElementById("solve-button").addEventListener("click", solveGame);
-
 
 initBoard();
