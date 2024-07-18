@@ -210,10 +210,20 @@ body.beach-theme {
     --key-background-active: #646669;
 }
 
-#solve-button {
+footer {
     position: absolute;
     bottom: 2%;
-    left: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--background-color);
+    z-index: 1000; /* Ensure the footer stays on top */
+}
+
+#solve-button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #ffdd57;
@@ -221,6 +231,9 @@ body.beach-theme {
     border-radius: 5px;
     cursor: pointer;
     color: #130f1a;
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
 }
 
 #solve-button:hover {
@@ -228,14 +241,14 @@ body.beach-theme {
 }
 
 .easter-egg {
-    position: absolute;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 1rem;
     color: var(--text-color);
     cursor: pointer;
     font-size: 14px;
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
 }
 
 /* Media queries for additional responsiveness */
