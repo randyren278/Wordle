@@ -246,7 +246,7 @@ footer {
     cursor: pointer;
     font-size: 14px;
     position: absolute;
-    left: 50%;
+    right: 1%;
     bottom: 3%;
     transform: translateX(-50%);
 }
