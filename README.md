@@ -36,7 +36,7 @@ Contains the main game logic and handles user interactions.
 Contains an array of possible words that can be selected as the hidden word to guess.
 
 ## Gallery
-![alt text](gallerygif.gif)
+![alt text](gallerygiffinal.gif)
 
 ## Game Logic
 
