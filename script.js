@@ -198,22 +198,23 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 });
 
 function setTheme(theme) {
-    document.body.classList.remove('light-theme', 'dark-theme','taro-theme','pulse-theme','beach-theme');
-    if (theme === 'light') {
-        document.body.classList.add('light-theme');
-    } else if (theme=== 'dark') {
-        document.body.classList.add('dark-theme');
-    } else if (theme==='taro') {
-        document.body.classList.add('taro-theme');
-    } else if (theme==='pulse') {
-        document.body.classList.add('pulse-theme');
-    } else if (theme==='beach') {
-        document.body.classList.add('beach-theme');
-    }
+    document.body.classList.remove('light-theme', 'dark-theme', 'taro-theme', 'pulse-theme', 'beach-theme');
+    document.body.classList.add(`${theme}-theme`);
+    localStorage.setItem('selectedTheme', theme); // Save the selected theme to localStorage
+}
 
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme('dark'); // Default theme
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    applySavedTheme(); // Apply the saved theme on page load
+
     const themesButton = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
 
@@ -225,7 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
     document.getElementById("taro-theme-btn").addEventListener("click", () => setTheme('taro'));
     document.getElementById("pulse-theme-btn").addEventListener("click", () => setTheme('pulse'));
-    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme("beach"));
+    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme('beach'));
+});
+
+document.getElementById("logo-button").addEventListener("click", () => {
+    window.location.reload(); // Reload the page
 });
 
 function solveGame() {
