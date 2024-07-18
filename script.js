@@ -198,12 +198,17 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 });
 
 function setTheme(theme) {
-    document.body.classList.remove('light-theme', 'dark-theme');
+    document.body.classList.remove('light-theme', 'dark-theme','taro-theme','pulse-theme');
     if (theme === 'light') {
         document.body.classList.add('light-theme');
-    } else {
+    } else if (theme=== 'dark') {
         document.body.classList.add('dark-theme');
+    } else if (theme==='taro') {
+        document.body.classList.add('taro-theme');
+    } else if (theme==='pulse') {
+        document.body.classList.add('pulse-theme');
     }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -216,6 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listeners for theme change
     document.getElementById("light-theme-btn").addEventListener("click", () => setTheme('light'));
     document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
+    document.getElementById("taro-theme-btn").addEventListener("click", () => setTheme('taro'));
+    document.getElementById("pulse-theme-btn").addEventListener("click", () => setTheme('pulse'));
 });
 
 initBoard();

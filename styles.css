@@ -175,3 +175,25 @@ body.dark-theme {
     --key-background-hover: #9aa0a6;
     --key-background-active: #b9b9b9;
 }
+
+body.taro-theme {
+    --background-color: #b3baff;
+    --text-color: #130f1a;
+    --border-color: #6f6c91;
+    --filled-border-color: #130f1a;
+    --key-background: #dddddd72;
+    --key-text-color: #130f1a;
+    --key-background-hover: #6f6c91;
+    --key-background-active: #130f1a;
+}
+
+body.pulse-theme {
+    --background-color: #1e1e32;
+    --text-color: #7a52cc;
+    --border-color: #3d3d66;
+    --filled-border-color: #7a52cc;
+    --key-background: #3d3d66;
+    --key-text-color: #7a52cc;
+    --key-background-hover: #5c5c8a;
+    --key-background-active: #7a52cc;
+}
