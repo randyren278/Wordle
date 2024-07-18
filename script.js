@@ -210,7 +210,14 @@ function setTheme(theme) {
     } else if (theme==='beach') {
         document.body.classList.add('beach-theme');
     }
+    localStorage.setItem('selectedTheme', theme);
+}
 
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -225,6 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setting of the dropdown content width
     setDropdownWidth();
 
+    // Apply the saved theme
+    applySavedTheme();
+
     // Event listener for window resize to adjust the dropdown content width
     window.addEventListener('resize', setDropdownWidth);
 
@@ -233,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
     document.getElementById("taro-theme-btn").addEventListener("click", () => setTheme('taro'));
     document.getElementById("pulse-theme-btn").addEventListener("click", () => setTheme('pulse'));
-    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme("beach"));
+    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme('beach'));
 });
 
 function solveGame() {
@@ -366,5 +376,3 @@ function revealEasterEgg() {
 document.getElementById("easter-egg").addEventListener("click", revealEasterEgg);
 
 initBoard();
-
-
