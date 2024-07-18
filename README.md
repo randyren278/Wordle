@@ -5,6 +5,7 @@ Eldrow+ is a word guessing game where players try to guess a hidden word within 
 ## Table of Contents
 
 - [Project Structure](#project-structure)
+- [Gallery](#gallery)
 - [Game Logic](#game-logic)
 - [Solving Functionality](#solving-functionality)
 - [Theme Persistence](#theme-persistence)
@@ -34,6 +35,11 @@ Contains the main game logic and handles user interactions.
 ### words.js
 
 Contains an array of possible words that can be selected as the hidden word to guess.
+
+## Gallery
+![alt text](<Screenshot 2024-07-18 at 12.37.10 AM.png>)
+![alt text](<Screenshot 2024-07-18 at 12.37.25 AM.png>)
+[text](<../../Screen Recording 2024-07-18 at 12.41.04 AM.mov>)
 
 ## Game Logic
 
