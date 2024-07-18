@@ -9,9 +9,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body>
+<body class="dark-theme">
     <header>
         <button id="logo-button" onclick="window.location.reload()">Eldrow+</button>
+        <div class="dropdown">
+            <button class="dropbtn">Themes</button>
+            <div class="dropdown-content">
+                <a href="#" id="light-theme-btn">Light</a>
+                <a href="#" id="dark-theme-btn">Dark</a>
+            </div>
+        </div>
     </header>
     
     <main>

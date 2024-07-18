@@ -197,4 +197,16 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
     document.dispatchEvent(new KeyboardEvent("keyup", { key: key }));
 });
 
+function setTheme(theme) {
+    document.body.classList.remove('light-theme', 'dark-theme');
+    if (theme === 'light') {
+        document.body.classList.add('light-theme');
+    } else {
+        document.body.classList.add('dark-theme');
+    }
+}
+
+document.getElementById("light-theme-btn").addEventListener("click", () => setTheme('light'));
+document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
+
 initBoard();

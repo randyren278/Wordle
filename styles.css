@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #121213;
-    color: #d7dadc;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,12 +14,15 @@ header {
     position: absolute;
     top: 20px;
     left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 #logo-button {
     background: none;
     border: none;
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
@@ -43,7 +46,7 @@ main {
 }
 
 .letter-box {
-    border: 2px solid #3a3a3c;
+    border: 2px solid var(--border-color);
     border-radius: 5px;
     margin: 5px;
     font-size: 2rem;
@@ -54,11 +57,11 @@ main {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .filled-box {
-    border: 2px solid #565758;
+    border: 2px solid var(--filled-border-color);
 }
 
 .letter-row {
@@ -84,16 +87,91 @@ main {
     margin: 0 4px;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: #818384;
+    background-color: var(--key-background);
     border: none;
     border-radius: 5px;
-    color: #ffffff;
+    color: var(--key-text-color);
 }
 
 .keyboard-button:hover {
-    background-color: #9aa0a6;
+    background-color: var(--key-background-hover);
 }
 
 .keyboard-button:active {
-    background-color: #b9b9b9;
+    background-color: var(--key-background-active);
+}
+
+/* Dropdown */
+.dropbtn {
+    background-color: var(--key-background);
+    color: var(--key-text-color);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--key-background);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: var(--key-text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--key-background-hover);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+:root {
+    --background-color: #121213;
+    --text-color: #d7dadc;
+    --border-color: #3a3a3c;
+    --filled-border-color: #565758;
+    --key-background: #818384;
+    --key-text-color: #ffffff;
+    --key-background-hover: #9aa0a6;
+    --key-background-active: #b9b9b9;
+}
+
+body.light-theme {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #cccccc;
+    --filled-border-color: #aaaaaa;
+    --key-background: #dddddd;
+    --key-text-color: #000000;
+    --key-background-hover: #bbbbbb;
+    --key-background-active: #999999;
+}
+
+body.dark-theme {
+    --background-color: #121213;
+    --text-color: #d7dadc;
+    --border-color: #3a3a3c;
+    --filled-border-color: #565758;
+    --key-background: #818384;
+    --key-text-color: #ffffff;
+    --key-background-hover: #9aa0a6;
+    --key-background-active: #b9b9b9;
 }
