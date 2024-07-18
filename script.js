@@ -33,7 +33,7 @@ function shadeKeyBoard(letter, color) {
                 return;
             }
 
-            if (oldColor === "yellow" && color !== "green") {
+            if (oldColor === "#e6b400" && color !== "green") {
                 return;
             }
 
@@ -229,7 +229,114 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function solveGame() {
-   //missing function//
+    let potentialWords = WORDS.slice();
+    let solved = false;
+    let isFirstGuess = true;
+
+    function getFeedback(guess, solution) {
+        let feedback = ["gray", "gray", "gray", "gray", "gray"];
+        let solutionChars = solution.split("");
+
+        // Check for correct positions (green)
+        for (let i = 0; i < 5; i++) {
+            if (guess[i] === solution[i]) {
+                feedback[i] = "green";
+                solutionChars[i] = null; // Mark as used
+            }
+        }
+
+        // Check for correct letters in wrong positions (yellow)
+        for (let i = 0; i < 5; i++) {
+            if (feedback[i] !== "green" && solutionChars.includes(guess[i])) {
+                feedback[i] = "#e6b400";
+                solutionChars[solutionChars.indexOf(guess[i])] = null; // Mark as used
+            }
+        }
+
+        return feedback;
+    }
+
+    function filterWords(guess, feedback) {
+        potentialWords = potentialWords.filter(word => {
+            let tempFeedback = getFeedback(guess, word);
+            return tempFeedback.every((val, index) => val === feedback[index]);
+        });
+    }
+
+    function makeGuess() {
+        if (isFirstGuess) {
+            isFirstGuess = false;
+            return "soare";
+        }
+        // Here we just choose the first potential word for simplicity
+        // More advanced strategies can be used for better performance
+        return potentialWords[0];
+    }
+
+    function guessRow(row, callback) {
+        if (guessesRemaining === 0) return;
+
+        let guess = makeGuess();
+        console.log(`Guessing: ${guess}`);
+        
+        for (let i = 0; i < guess.length; i++) {
+            let box = row.children[i];
+            box.textContent = guess[i];
+            box.classList.add("filled-box");
+        }
+        
+        let feedback = getFeedback(guess, rightGuessString);
+        console.log(`Feedback: ${feedback.join(", ")}`);
+        
+        let promises = [];
+        
+        for (let i = 0; i < feedback.length; i++) {
+            let box = row.children[i];
+            let delay = 250 * i;
+            promises.push(
+                new Promise(resolve => {
+                    setTimeout(() => {
+                        animateCSS(box, "flipInX");
+                        box.style.backgroundColor = feedback[i];
+                        shadeKeyBoard(guess.charAt(i) + "", feedback[i]);
+                        resolve();
+                    }, delay);
+                })
+            );
+        }
+
+        Promise.all(promises).then(() => {
+            if (guess === rightGuessString) {
+                toastr.success("You guessed right! Game over!");
+                guessesRemaining = 0;
+                solved = true;
+                return;
+            } else {
+                guessesRemaining -= 1;
+                filterWords(guess, feedback);
+                console.log(`Remaining words: ${potentialWords.join(", ")}`);
+                if (guessesRemaining === 0) {
+                    toastr.error("You've run out of guesses! Game over!");
+                    toastr.info(`The right word was: "${rightGuessString}"`);
+                    return;
+                } else {
+                    callback();
+                }
+            }
+        });
+    }
+
+    function startGuessing() {
+        function guessNextRow() {
+            if (guessesRemaining === 0 || solved) return;
+            let nextRow = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
+            guessRow(nextRow, guessNextRow);
+        }
+        
+        guessNextRow();
+    }
+
+    startGuessing();
 }
 
 document.getElementById("solve-button").addEventListener("click", solveGame);
