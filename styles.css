@@ -211,7 +211,7 @@ body.beach-theme {
 }
 
 #solve-button {
-    position: fixed;
+    position: absolute;
     bottom: 2%;
     left: 2%;
     padding: 10px 20px;
@@ -228,7 +228,7 @@ body.beach-theme {
 }
 
 .easter-egg {
-    position: fixed;
+    position: absolute;
     bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
