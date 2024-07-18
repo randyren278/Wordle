@@ -198,39 +198,42 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 });
 
 function setTheme(theme) {
-    document.body.classList.remove('light-theme', 'dark-theme', 'taro-theme', 'pulse-theme', 'beach-theme');
-    document.body.classList.add(`${theme}-theme`);
-    localStorage.setItem('selectedTheme', theme); // Save the selected theme to localStorage
-}
-
-function applySavedTheme() {
-    const savedTheme = localStorage.getItem('selectedTheme');
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        setTheme('dark'); // Default theme
+    document.body.classList.remove('light-theme', 'dark-theme','taro-theme','pulse-theme','beach-theme');
+    if (theme === 'light') {
+        document.body.classList.add('light-theme');
+    } else if (theme=== 'dark') {
+        document.body.classList.add('dark-theme');
+    } else if (theme==='taro') {
+        document.body.classList.add('taro-theme');
+    } else if (theme==='pulse') {
+        document.body.classList.add('pulse-theme');
+    } else if (theme==='beach') {
+        document.body.classList.add('beach-theme');
     }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    applySavedTheme(); // Apply the saved theme on page load
-
     const themesButton = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
 
-    // Set the width of the dropdown content to match the themes button
-    dropdownContent.style.width = `${themesButton.offsetWidth}px`;
+    // Function to set the dropdown content width
+    function setDropdownWidth() {
+        dropdownContent.style.width = `${themesButton.offsetWidth}px`;
+    }
+
+    // Initial setting of the dropdown content width
+    setDropdownWidth();
+
+    // Event listener for window resize to adjust the dropdown content width
+    window.addEventListener('resize', setDropdownWidth);
 
     // Event listeners for theme change
     document.getElementById("light-theme-btn").addEventListener("click", () => setTheme('light'));
     document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
     document.getElementById("taro-theme-btn").addEventListener("click", () => setTheme('taro'));
     document.getElementById("pulse-theme-btn").addEventListener("click", () => setTheme('pulse'));
-    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme('beach'));
-});
-
-document.getElementById("logo-button").addEventListener("click", () => {
-    window.location.reload(); // Reload the page
+    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme("beach"));
 });
 
 function solveGame() {
@@ -347,19 +350,3 @@ function solveGame() {
 document.getElementById("solve-button").addEventListener("click", solveGame);
 
 initBoard();
-
-function revealEasterEgg() {
-    const word = "randy";
-    rightGuessString = "randy";
-    for (let i = 0; i < word.length; i++) {
-        setTimeout(() => {
-            insertLetter(word[i]);
-        }, i * 300); // Adding delay to simulate typing
-    }
-
-    setTimeout(() => {
-        checkGuess();
-    }, word.length * 300 + 100); // Adding a delay before checking the guess
-}
-
-document.getElementById("easter-egg").addEventListener("click", revealEasterEgg);

@@ -19,6 +19,7 @@ header {
     align-items: center;
     gap: 2%;
     justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 #logo-button {
@@ -235,4 +236,68 @@ body.beach-theme {
     color: var(--text-color);
     cursor: pointer;
     font-size: 14px;
+}
+
+/* Media queries for additional responsiveness */
+@media (max-width: 600px) {
+    header {
+        flex-direction: row;
+        padding: 0.5rem;
+    }
+
+    #logo-button {
+        font-size: 1rem;
+        padding: 0.25rem;
+    }
+
+    .letter-box {
+        font-size: rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: 0.25rem;
+    }
+
+    .keyboard-button {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        max-width: 30rem;
+        margin: 0.1rem;
+    }
+
+    .keyboard-button:nth-last-child(1), 
+    .keyboard-button:nth-last-child(2) {
+        max-width: 30rem;
+    }
+
+    #solve-button {
+        font-size: 0.5rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .easter-egg {
+        font-size: 0.5rem;
+    }
+
+    .dropdown-content a {
+        padding: 0.4rem;
+        font-size: 0.5rem;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        box-shadow: 0px 4px 4px rgba(0,0,0,0.1); /* Adjust shadow for smaller screens */
+    }
+
+    .dropbtn {
+        font-size: 0.5rem;
+        padding: 0.4rem;
+    }
+
+    /* Inside the existing media query @media (max-width: 600px) */
+    .dropdown-content {
+        width: 100%; /* Make dropdown content the same width as the parent button */
+        left: 0; /* Align to the left edge of the button */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+
 }
