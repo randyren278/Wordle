@@ -178,7 +178,7 @@ body.dark-theme {
 
 body.taro-theme {
     --background-color: #b3baff;
-    --text-color: #130f1a;
+    --text-color: #130f1ac6;
     --border-color: #6f6c91;
     --filled-border-color: #130f1a;
     --key-background: #dddddd72;
@@ -196,4 +196,15 @@ body.pulse-theme {
     --key-text-color: #7a52cc;
     --key-background-hover: #5c5c8a;
     --key-background-active: #7a52cc;
+}
+
+body.beach-theme {
+    --background-color: #eae4cf;
+    --text-color: #535457;
+    --border-color: #ada998;
+    --filled-border-color: #9abbcd;
+    --key-background: #ada998;
+    --key-text-color: #646669;
+    --key-background-hover: #9abbcd;
+    --key-background-active: #646669;
 }

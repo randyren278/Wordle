@@ -198,7 +198,7 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 });
 
 function setTheme(theme) {
-    document.body.classList.remove('light-theme', 'dark-theme','taro-theme','pulse-theme');
+    document.body.classList.remove('light-theme', 'dark-theme','taro-theme','pulse-theme','beach-theme');
     if (theme === 'light') {
         document.body.classList.add('light-theme');
     } else if (theme=== 'dark') {
@@ -207,6 +207,8 @@ function setTheme(theme) {
         document.body.classList.add('taro-theme');
     } else if (theme==='pulse') {
         document.body.classList.add('pulse-theme');
+    } else if (theme==='beach') {
+        document.body.classList.add('beach-theme');
     }
 
 }
@@ -223,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("dark-theme-btn").addEventListener("click", () => setTheme('dark'));
     document.getElementById("taro-theme-btn").addEventListener("click", () => setTheme('taro'));
     document.getElementById("pulse-theme-btn").addEventListener("click", () => setTheme('pulse'));
+    document.getElementById("beach-theme-btn").addEventListener("click", () => setTheme("beach"));
 });
 
 initBoard();
