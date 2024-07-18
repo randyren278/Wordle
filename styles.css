@@ -208,3 +208,20 @@ body.beach-theme {
     --key-background-hover: #9abbcd;
     --key-background-active: #646669;
 }
+
+#solve-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffdd57;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #130f1a;
+}
+
+#solve-button:hover {
+    background-color: #ffc107;
+}

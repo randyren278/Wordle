@@ -239,6 +239,7 @@ export const WORDS = [
     'verbs',
     'seeds',
     'helps',
+    'soare',
     'sharp',
     'visit',
     'woods',
